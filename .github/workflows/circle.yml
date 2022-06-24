@@ -21,7 +21,7 @@ jobs:
         gem install --no-document circle_orbit
     - name: Check for New Comments on Circle Spaces posts
       run: |
-        circle_orbit --check-comments
+        circle_orbit --check-comments --historical-import
       env:
         CIRCLE_API_KEY: ${{ secrets.CIRCLE_API_KEY }}
         CIRCLE_URL: ${{ secrets.CIRCLE_URL }}
@@ -29,7 +29,7 @@ jobs:
         ORBIT_WORKSPACE_ID: ${{ secrets.ORBIT_WORKSPACE_ID }}
     - name: Check for New Posts in Circle Spaces
       run: |
-        circle_orbit --check-posts
+        circle_orbit --check-posts --historical-import
       env:
         CIRCLE_API_KEY: ${{ secrets.CIRCLE_API_KEY }}
         CIRCLE_URL: ${{ secrets.CIRCLE_URL }}
